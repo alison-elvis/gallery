@@ -1,0 +1,76 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 5px;
+  justify-content: center;
+  margin: auto;
+  max-width: 1000px;
+}
+
+figure img {
+  max-width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+figure img:hover {
+  transform: scale(1.1);
+}
+
+figcaption {
+  font-style: italic;
+  color: #111;
+}
+
+.span-quotes::before {
+  content: open-quote;
+}
+
+.span-quotes::after {
+  content: close-quote;
+}
+
+#modal {
+  width: 80%;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+#modal img {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+#modal button {
+  border: none;
+  cursor: pointer;
+}
+
+#modal button:focus {
+  outline: 3px solid #ff0000;
+}
+
+body.modal-open {
+  background-color: rgba(0, 0, 0, 0.94);
+  figure > * {
+    display: none;
+  }
+  h1 {
+    color: lime;
+  }
+}
